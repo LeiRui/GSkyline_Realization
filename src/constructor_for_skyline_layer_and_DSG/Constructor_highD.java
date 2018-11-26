@@ -43,15 +43,4 @@ public class Constructor_highD extends Constructor {
         }
     }
 
-//    public static void main(String[] args) {
-//        Constructor_highD skyline_layers_in_high_dim
-//                = new Constructor_highD(Constants.eg, Constants.eg_save, 4);
-//        ArrayList<Point>[] layers = skyline_layers_in_high_dim.layers;
-//        for (int i = 0; i < skyline_layers_in_high_dim.maxlayer; i++) {
-//            for (Point p : layers[i]) {
-//                System.out.println(p.getUnitGroupSize());
-//            }
-//        }
-//    }
-
 }

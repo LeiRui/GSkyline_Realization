@@ -68,16 +68,5 @@ public class Constructor_2D extends Constructor {
         }
 
     }
-
-//    public static void main(String[] args) {
-//        Constructor_2D Constructor_2D
-//                = new Constructor_2D(Constants.anti_2, Constants.anti_2_save, 4);
-//        ArrayList<Point>[] layers = Constructor_2D.layers;
-//        for (int i = 0; i < Constructor_2D.maxlayer; i++) {
-//            for (Point p : layers[i]) {
-//                System.out.println("" + p + " " + p.getUnitGroupSize());
-//            }
-//        }
-//    }
 }
 
