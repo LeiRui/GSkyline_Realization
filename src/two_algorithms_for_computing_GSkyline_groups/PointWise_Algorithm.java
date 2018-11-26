@@ -23,9 +23,11 @@ public class PointWise_Algorithm {
 
     public PointWise_Algorithm(Constructor constructor) {
         this.constructor = constructor;
+
         this.FullTailList = new ArrayList<>();
         this.nodes = new ArrayList<>();
         this.preprocessGroup = new ArrayList<>();
+
         preprocess();
         mainprocess();
     }
