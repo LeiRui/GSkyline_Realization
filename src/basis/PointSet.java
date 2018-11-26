@@ -1,4 +1,4 @@
-package preprocess;
+package basis;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class PointSet {
         this.datafile = datafile;
         points = new ArrayList<>();
         getPoints();
-        Collections.sort(points); //sort the n points on the first dimension in ascending order
+        Collections.sort(points); //this is an important step: sort the n points on the first dimension in ascending order
     }
 
     private void getPoints() {
@@ -41,6 +41,5 @@ public class PointSet {
 //    public static void main(String[] args) {
 //        PointSet pointSet = new PointSet(Constants.anti_2);
 //    }
-
 
 }

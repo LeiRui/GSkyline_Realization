@@ -1,13 +1,17 @@
-package skyline_layer_constructor;
+package constructor_for_skyline_layer_and_DSG;
 
-import preprocess.Constants;
-import preprocess.Point;
+import basis.Constants;
+import basis.Point;
 
 import java.util.ArrayList;
 
-public class skyline_layers_highd extends skyline_layers_general {
-    public skyline_layers_highd(String datafile, String savefile, int k_point) {
+public class Constructor_highD extends Constructor {
+    public Constructor_highD(String datafile, String savefile, int k_point) {
         super(datafile, savefile, k_point);
+    }
+
+    public Constructor_highD(String datafile, int k_point) {
+        super(datafile, k_point);
     }
 
     // 按照算法构建skyline layers
@@ -39,10 +43,15 @@ public class skyline_layers_highd extends skyline_layers_general {
         }
     }
 
-    public static void main(String[] args) {
-        skyline_layers_highd skyline_layers_in_high_dim
-                = new skyline_layers_highd(Constants.my3, Constants.my3_save, 10);
-        System.out.println("a");
-    }
+//    public static void main(String[] args) {
+//        Constructor_highD skyline_layers_in_high_dim
+//                = new Constructor_highD(Constants.eg, Constants.eg_save, 4);
+//        ArrayList<Point>[] layers = skyline_layers_in_high_dim.layers;
+//        for (int i = 0; i < skyline_layers_in_high_dim.maxlayer; i++) {
+//            for (Point p : layers[i]) {
+//                System.out.println(p.getUnitGroupSize());
+//            }
+//        }
+//    }
 
 }
