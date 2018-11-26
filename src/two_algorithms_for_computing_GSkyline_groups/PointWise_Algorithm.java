@@ -1,13 +1,9 @@
 package two_algorithms_for_computing_GSkyline_groups;
 
-import basis.Constants;
 import basis.GSkylineGroup;
 import basis.Point;
 import constructor_for_skyline_layer_and_DSG.Constructor;
-import constructor_for_skyline_layer_and_DSG.Constructor_2D;
-import constructor_for_skyline_layer_and_DSG.Constructor_highD;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,18 +91,33 @@ public class PointWise_Algorithm {
         }
     }
 
-    public static void main(String[] args) {
-        Constructor_2D constructor_2D
-                = new Constructor_2D(Constants.eg, 4);
-        PointWise_Algorithm pointWise_algorithm = new PointWise_Algorithm(constructor_2D);
-        System.out.println("");
-        ArrayList<GSkylineGroup> G = pointWise_algorithm.nodes.get(constructor_2D.k_point_GSkyline_groups);
-        System.out.println("find " + G.size() + " " + constructor_2D.k_point_GSkyline_groups + "-point G-Skyline groups:");
+    // 把preprocess步骤和mainprocess步骤找到的k-point G-Skyline groups合并起来成最终结果
+    public ArrayList<ArrayList<Point>> getResult() {
+        ArrayList<ArrayList<Point>> res = new ArrayList<>();
+        for (Point p : preprocessGroup) {
+            ArrayList<Point> points = p.parents;
+            points.add(p);
+            res.add(points);
+        }
+        if (nodes.size() <= constructor.k_point_GSkyline_groups) {
+            return res;
+        } else {
+            ArrayList<GSkylineGroup> gSkylineGroups = nodes.get(constructor.k_point_GSkyline_groups);
+            for (GSkylineGroup gSkylineGroup : gSkylineGroups) {
+                res.add(gSkylineGroup.points);
+            }
+        }
+        return res;
+    }
+
+    public void printResult() {
+        ArrayList<ArrayList<Point>> res = getResult();
+        System.out.println("find " + res.size() + " " + constructor.k_point_GSkyline_groups + "-point G-Skyline groups:");
         int cnt = 0;
-        for (GSkylineGroup gSkylineGroup : G) {
+        for (ArrayList<Point> group : res) {
             cnt++;
             String line = "";
-            for (Point p : gSkylineGroup.points) {
+            for (Point p : group) {
                 line += p;
             }
             System.out.println("G-Skyline group" + cnt + ":" + line);
