@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Point implements Comparable<Point> {
     public int dimension;
+    public int index;
     public int layer = 0; // 0 means invalid
     public double[] value;
     public ArrayList<Point> childern;
