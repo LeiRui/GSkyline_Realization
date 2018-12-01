@@ -23,3 +23,4 @@ derby-tsfile-db
 *.gz
 *.tar.gz
 *.tar
+/bin/
