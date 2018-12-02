@@ -81,26 +81,29 @@ public class GSkylineGroup {
 		}
 		return children;
 	}
-
+	//Algorithm3 line 15-16: form new candidate group G''
 	public ArrayList<Integer> getCandidateUnitGroups(int totalPoints) {
 		int max = Integer.MIN_VALUE;
 		for (Point p : points) {
+			//get max index
 			max = Math.max(max, p.index);
 		}
 		ArrayList<Integer> candidate = new ArrayList<>();
 		HashSet<Integer> children = getIndexsOfChildren();
-		for (int i = max +1; i <totalPoints; i++) {
+		for (int i = max + 1; i <totalPoints; i++) {
 			if (!children.contains(i)) {
+				//Algorithm3 line 16
 				candidate.add(i);
 			}
 		}
 		return candidate;
 	}
 	
-
+	//get unit group = p + parents [definition 2.1.6]
 	public GSkylineGroup unionUnitGtoup(Point p) {
 		points.add(p);
 		poIntegers.add(p.index);
+		//Algorithm3 line 11-14
 		for (Point parent : p.parents) {
 			poIntegers.add(parent.index);
 		}

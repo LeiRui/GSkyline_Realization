@@ -46,29 +46,38 @@ public class UnitGroupWise_Algorithm {
     }
     private void process(){
     	int totalPoins = preprocessGroup.size();
+    	//Algorithm3 line 2
     	for (int i = 0;i<totalPoins;i++) {
     		//unit
-			Point point = preprocessGroup.get(i);
+			Point point = preprocessGroup.get(i);			
 			GSkylineGroup group=new GSkylineGroup(point);
+			//Algorithm3 line 3-5
 			if(group.getNumOfPoints()==constructor.k_point_GSkyline_groups){
 					res++;
 			}
+			//Algorithm3 line 6-7
 			if(group.getNumOfPoints()>constructor.k_point_GSkyline_groups){
 				continue;
 			}
 			
-			//tailset superset prune
+			//tailset and superset prune
 			LinkedList<GSkylineGroup> list=new LinkedList<>();
-			list.add(group);
+			list.add(group);//|G′|u 
+			//Algorithm3 line 9-10: candidate group G' & G'u is not empty
 			while(!list.isEmpty()){
 				GSkylineGroup g=list.remove();
+				//Algorithm3 line 10  getCandidateUnitGroups = each G′
+				//Algorithm3 line 15-16: form candidateUnitGroups G''
 				for (int j:g.getCandidateUnitGroups(totalPoins)) {
 					GSkylineGroup next_group=new GSkylineGroup(g);
+					//Algorithm3 line 11-14 form unit group
 					next_group.unionUnitGtoup(preprocessGroup.get(j));
 					int num_point = next_group.getNumOfPoints();
 					if(num_point==constructor.k_point_GSkyline_groups){
+						//Algorithm3 line 18  not prune superset--->output
 						res++;
 					}else if (num_point<constructor.k_point_GSkyline_groups) {
+						//Algorithm3 line 19  prune superset
 						list.add(next_group);
 					}
 				}
