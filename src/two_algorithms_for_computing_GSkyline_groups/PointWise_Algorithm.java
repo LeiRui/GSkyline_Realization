@@ -122,7 +122,7 @@ public class PointWise_Algorithm {
             for (Point p : group) {
                 line += p;
             }
-            System.out.println("G-Skyline group" + cnt + ":" + line);
+           // System.out.println("G-Skyline group" + cnt + ":" + line);
         }
     }
 
