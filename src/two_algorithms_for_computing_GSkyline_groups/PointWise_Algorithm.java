@@ -112,18 +112,19 @@ public class PointWise_Algorithm {
         return res;
     }
 
-    public void printResult() {
+    public int printResult() {
         ArrayList<ArrayList<Point>> res = getResult();
         System.out.println("find " + res.size() + " " + constructor.k_point_GSkyline_groups + "-point G-Skyline groups:");
-        int cnt = 0;
-        for (ArrayList<Point> group : res) {
-            cnt++;
-            String line = "";
-            for (Point p : group) {
-                line += p;
-            }
-           // System.out.println("G-Skyline group" + cnt + ":" + line);
-        }
+        return res.size();
+//        int cnt = 0;
+//        for (ArrayList<Point> group : res) {
+//            cnt++;
+//            String line = "";
+//            for (Point p : group) {
+//                line += p;
+//            }
+//            System.out.println("G-Skyline group" + cnt + ":" + line);
+//        }
     }
 
 }
