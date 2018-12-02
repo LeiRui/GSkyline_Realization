@@ -73,7 +73,7 @@ public class UnitGroupWise_Algorithm {
 					}
 				}
 			}	
-			System.out.println(res);
+			//System.out.println(res);
 		}
     	System.out.println("UnitGroupWise的G_skylineGroup数目为:" + res);
     }
