@@ -19,7 +19,7 @@ public class UnitGroupWise_Algorithm {
     // 预处理步骤中找到的unit group是k point G-Skyline group的点
     public ArrayList<Point> preprocessGroup;
     
-    int res=0;
+    public int res=0;
 
     public UnitGroupWise_Algorithm(Constructor constructor) {
         this.constructor = constructor;
@@ -75,7 +75,7 @@ public class UnitGroupWise_Algorithm {
 			}	
 			//System.out.println(res);
 		}
-    	System.out.println("UnitGroupWise的G_skylineGroup数目为:" + res);
+//    	System.out.println("UnitGroupWise的G_skylineGroup数目为:" + res);
     }
 
 

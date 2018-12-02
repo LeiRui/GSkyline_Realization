@@ -9,24 +9,19 @@ import java.io.PrintWriter;
 
 public class TestPointWiseAlgorithm {
     public static void main(String[] args) throws Exception {
-        String[] family = new String[12];
-        family[0] = Constants.anti2;
-        family[1] = Constants.anti4;
-        family[2] = Constants.anti6;
-        family[3] = Constants.anti8;
-
-        family[4] = Constants.corr2;
-        family[5] = Constants.corr4;
-        family[6] = Constants.corr6;
-        family[7] = Constants.corr8;
-
-        family[8] = Constants.inde2;
-        family[9] = Constants.inde4;
-        family[10] = Constants.inde6;
-        family[11] = Constants.inde8;
+        String[] family = new String[9];
+        family[0] = Constants.inde2;
+        family[1] = Constants.inde4;
+        family[2] = Constants.inde6;
+        family[3] = Constants.corr2;
+        family[4] = Constants.corr4;
+        family[5] = Constants.corr6;
+        family[6] = Constants.anti2;
+        family[7] = Constants.anti4;
+        family[8] = Constants.anti6;
 
         PrintWriter pw = new PrintWriter("algo_p_fixk_3_varing_d.txt");
-        pw.println("fileName,outputGroupNumer,elapseTime(ms)");
+        pw.println("fileName,outputGroupNumber,elapseTime(ms)");
         int fixk = 3;
 
         for (int i = 0; i < family.length; i++) {
